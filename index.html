@@ -5,15 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Components Tester</title>
+    <style>
+        :root {
+            /* Color Variables */
+            --primary-color: #4CAF50;
+            --text-primary: #333333;
+            --border-color: #dddddd;
+            --success-color: #2d5016;
+            /* Spacing Variables */
+            --spacing-sm: 8px;
+            --spacing-md: 10px;
+            /* Size Variables */
+            --border-radius: 5px;
+            /* Typography Variables */
+            --font-family: Arial, sans-serif;
+            --font-size-base: 16px;
+            --font-weight-bold: bold;
+            /* Slider Variables */
+            --slider-height: 8px;
+            --slider-thumb-size: 20px;
+            --slider-mark-height: 8px;
+            --slider-mark-width: 1px;
+            --slider-marks-height: 20px;
+            --slider-focus-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5);
+        }
+    </style>
 </head>
 
 <body>
     <script type="module">
         import { TagInput } from "./dist/TaggedInput.js";
+        import { CustomSlider } from "./dist/CustomSlider.js";
         customElements.define("tag-input", TagInput);
+        customElements.define("custom-slider", CustomSlider);
     </script>
     <h2>Tagged Input:</h2>
     <tag-input></tag-input>
+
+    <h2>Custom Slider:</h2>
+    <custom-slider id="beans" label="Bean Count" min="1" max="100" value="5" step="1"
+    unit=" beans"></custom-slider>
+
 </body>
 
 </html>
